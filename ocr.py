@@ -14,11 +14,9 @@ async def read_image(img_path, lang='eng'):
     :text: str, converted text from image
     """
 
-    try:
-        return pytesseract.image_to_string(img_path, lang=lang)
-    except:
-        return "[ERROR] Unable to process file: {0}".format(img_path)
-
+    
+    return pytesseract.image_to_string(img_path, lang=lang)
+    
 async def read_images_from_dir(dir_path, lang='eng', write_to_file=False):
     """
     Performs OCR on all images present in a directory
